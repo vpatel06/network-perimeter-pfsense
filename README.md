@@ -1,120 +1,30 @@
-# 🛡️ Network Perimeter Security Lab using pfSense + Suricata
+# 🛡️ Virtual Network Perimeter Lab with pfSense + Suricata + Kali + Ubuntu
 
-This project builds a **virtual perimeter security network lab** using **pfSense** as a firewall/router and **Suricata** as an Intrusion Detection System (IDS) within **VirtualBox** — all 100% free and offline. It simulates a real-world network perimeter and showcases hands-on network security skills, ideal for cybersecurity students and beginners.
+## 📌 Overview
 
----
+This project simulates a virtual **network perimeter defense system** using open-source tools within **VirtualBox**. It features a realistic lab setup using:
 
-## 📌 Project Goals
+- `pfSense` firewall + router  
+- `Suricata` IDS to detect and log threats  
+- `Ubuntu` (internal host)  
+- `Kali Linux` (simulated attacker)
 
-- 🔐 Simulate a secure network perimeter in a virtual environment
-- 📦 Learn pfSense firewall configuration (interfaces, NAT, DHCP)
-- 🕵️ Deploy and configure Suricata IDS with live rules
-- 💻 Inspect and alert on suspicious network activity
-- 🧠 Practice hands-on network defense and monitoring
+The goal was to understand how network security works in practice, including how firewalls and IDS tools detect suspicious activity such as port scanning, malware downloads, and reconnaissance. A Python script was written to parse alerts from Suricata’s `eve.json` log for threat intelligence.
 
----
-
-## 🧰 Tech Stack
-
-| Component      | Purpose                               |
-|----------------|----------------------------------------|
-| VirtualBox     | Virtualization platform                |
-| pfSense        | Open-source firewall/router            |
-| Suricata       | Network Intrusion Detection System     |
-| Host-only LAN  | Simulated internal network             |
-| ET Open Rules  | Community-maintained IDS ruleset       |
+This project also helped reinforce concepts from the **CCNA**, especially around network segmentation, interfaces, and security zones.
 
 ---
 
-## 🖥️ Network Topology
+## 🧠 Skills Practiced
 
-    [Internet]
-        |
-    [NAT (WAN)]
-        |
-     pfSense
-    (Firewall)
-        |
-  [Host-only LAN]
-        |
- [Host OS or VMs]
-
+- pfSense installation and LAN/WAN interface setup  
+- Suricata configuration and rule tuning  
+- Network alert logging and testing  
+- Simulating attacks from Kali Linux (e.g., `nmap`)  
+- Parsing Suricata alerts using Python  
+- Working with VirtualBox virtual networks (NAT, Host-only)
 
 ---
 
-## 🛠️ Setup Instructions
-
-For detailed step-by-step instructions, see [`docs/setup.md`](docs/setup.md)
-
-1. ✅ Install VirtualBox
-2. 🧱 Create pfSense VM with 2 adapters: NAT (WAN) + Host-only (LAN)
-3. 🌐 Configure LAN IP (e.g., `192.168.56.2`) and DHCP range
-4. 🔧 Access pfSense Web GUI from host browser
-5. 📦 Install Suricata package
-6. 📄 Enable ET Open rules
-7. 📊 Monitor network with Suricata alerts
-
----
-
-## 🔍 Suricata Rules
-
-- ET Open ruleset enabled and updated inside pfSense
-- LAN interface monitored with Suricata in IDS mode
-- Alerts triggered by suspicious packets (e.g., scans, signatures)
-
-Details available in [`docs/suricata-rules.md`](docs/suricata-rules.md)
-
----
-
-## 🧪 Testing & Results
-
-You can simulate and detect:
-
-- Port scans using `nmap`
-- EICAR test file download
-- Misconfigured devices broadcasting strange traffic
-
-Captured alerts are visible in:
-
-
----
-
-## 📸 Screenshots
-
-| pfSense Dashboard            | Suricata Rules Setup         |
-|-----------------------------|------------------------------|
-| ![](images/dashboard.png)   | ![](images/suricata-config.png) |
-
----
-
-## 📚 Learning Outcomes
-
-- Understand firewall interfaces, NAT, and IP ranges
-- Deploy and tune Suricata in a real-world layout
-- Apply ET rules and monitor traffic
-- Build foundational skills for Network+ / CCNA / SOC analyst
-
----
-
-## 🏁 Next Steps
-
-- Add Windows/Linux VM on LAN side to simulate client
-- Use port scanning, malware samples, or traffic generators
-- Add Snort, pfBlockerNG, or remote logging to SIEM
-
----
-
-## 📝 License
-
-This project is open-source under the [MIT License](LICENSE).
-
----
-
-## 🙋‍♂️ Author
-
-**V Patel**  
-Cybersecurity Student | Network Security Enthusiast  
-[GitHub Profile](https://github.com/vpatel06)
-
-
+## 🖼️ Lab Architecture
 
