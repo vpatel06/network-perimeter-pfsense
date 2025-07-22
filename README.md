@@ -27,20 +27,4 @@ This project also helped reinforce concepts from the **CCNA**, especially around
 ---
 
 ## 🖼️ Lab Architecture
-            [ Internet ]
-                 |
-               (NAT)
-                 |
-           +-------------+
-           |   pfSense   |
-           |  Firewall + |
-           |  Suricata   |
-           +------+------+ 
-                  |
-          192.168.56.1 (LAN)
-                  |
-        ---------------------
-        |                   |
-192.168.56.2         192.168.56.3
-   [ Ubuntu ]           [ Kali ]
- Internal Host         Attacker VM
+           <pre> ``` [ Internet ] | (NAT) | +-------------+ | pfSense | | Firewall + | | Suricata | +------+------+ | LAN: 192.168.56.1 | --------------------- | | | | 192.168.56.2 192.168.56.3 [ Ubuntu VM ] [ Kali VM ] Internal Host Attacker VM ``` </pre>
